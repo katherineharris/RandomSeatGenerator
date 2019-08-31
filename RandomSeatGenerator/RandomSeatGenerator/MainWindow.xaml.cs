@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,7 +37,20 @@ namespace RandomSeatGenerator
 
         private void btnAssign_Click(object sender, RoutedEventArgs e)
         {
+            if (File.Exists(txtFile.Text) == true)
+            {
+                Random rnd = new Random();
+                var lines = File.ReadAllLines(txtFile.Text);
+                for (int i = 1; i < lines.Length; i++)
+                {
+                    var line = lines[i];
+                    var column = line.Split(',');
+                    string name = column[0];
+                    int seatNumber = rnd.Next(1, lines.Length);
+                    lstSeats.Items.Add($"{name}: Computer {seatNumber}");
 
+                }
+            }
         }
     }
 }

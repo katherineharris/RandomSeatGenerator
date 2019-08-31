@@ -9,7 +9,7 @@
     <Grid>
         <Button x:Name="btnAssign" Content="Assign Seats" HorizontalAlignment="Left" Margin="56,259,0,0" VerticalAlignment="Top" Width="129" Height="45" Click="btnAssign_Click"/>
         <ListBox x:Name="lstSeats" HorizontalAlignment="Left" Height="375" Margin="300,22,0,0" VerticalAlignment="Top" Width="464"/>
-        <TextBox x:Name="txtFile" HorizontalAlignment="Left" Height="23" Margin="56,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129"/>
+        <TextBox x:Name="txtFile" HorizontalAlignment="Left" Height="41" Margin="56,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129"/>
         <Button x:Name="btnRoster" Content="Select Roster" HorizontalAlignment="Left" Margin="56,93,0,0" VerticalAlignment="Top" Width="129" Height="45" Click="Button_Click"/>
         <Label x:Name="lblName" Content="Random Seat Generator" HorizontalAlignment="Left" Margin="25,22,0,0" VerticalAlignment="Top" Height="41" Width="215" FontSize="18"/>
 
