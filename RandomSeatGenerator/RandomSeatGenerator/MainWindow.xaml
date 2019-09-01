@@ -6,12 +6,17 @@
         xmlns:local="clr-namespace:RandomSeatGenerator"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button x:Name="btnAssign" Content="Assign Seats" HorizontalAlignment="Left" Margin="56,259,0,0" VerticalAlignment="Top" Width="129" Height="45" Click="btnAssign_Click"/>
-        <ListBox x:Name="lstSeats" HorizontalAlignment="Left" Height="375" Margin="300,22,0,0" VerticalAlignment="Top" Width="464"/>
-        <TextBox x:Name="txtFile" HorizontalAlignment="Left" Height="41" Margin="56,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129"/>
-        <Button x:Name="btnRoster" Content="Select Roster" HorizontalAlignment="Left" Margin="56,93,0,0" VerticalAlignment="Top" Width="129" Height="45" Click="Button_Click"/>
-        <Label x:Name="lblName" Content="Random Seat Generator" HorizontalAlignment="Left" Margin="25,22,0,0" VerticalAlignment="Top" Height="41" Width="215" FontSize="18"/>
+    <Grid x:Name="SeatGenerator" Margin="0,0,-6.667,-2.333">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="52*"/>
+            <ColumnDefinition Width="577*"/>
+            <ColumnDefinition Width="171*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnAssign" Content="Assign Seats" HorizontalAlignment="Left" Margin="4,259,0,0" VerticalAlignment="Top" Width="129" Height="45" Click="btnAssign_Click" Grid.Column="1"/>
+        <ListBox x:Name="lstSeats" HorizontalAlignment="Left" Height="381" Margin="262,18,0,0"           VerticalContentAlignment="Stretch"  Width="452" VerticalAlignment="Top" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtFile" HorizontalAlignment="Left" Height="41" Margin="4,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" Grid.Column="1"/>
+        <Button x:Name="btnRoster" Content="Select Roster" HorizontalAlignment="Left" Margin="4,93,0,0" VerticalAlignment="Top" Width="129" Height="45" Click="Button_Click" Grid.Column="1"/>
+        <Label x:Name="lblName" Content="Random Seat Generator" HorizontalAlignment="Left" Margin="25,22,0,0" VerticalAlignment="Top" Height="41" Width="215" FontSize="18" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>
