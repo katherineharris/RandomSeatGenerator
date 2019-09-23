@@ -39,18 +39,45 @@ namespace RandomSeatGenerator
         {
             if (File.Exists(txtFile.Text) == true)
             {
-                Random rnd = new Random();
+
                 var lines = File.ReadAllLines(txtFile.Text);
-                for (int i = 1; i < lines.Length; i++)
+                List<int> randomNumbers = new List<int>();
+                Random random = new Random();
+                int row = 0;
+
+                for (int i = 0; i < lines.Length; i++)
                 {
+                    int number;
+
                     var line = lines[i];
                     var column = line.Split(',');
                     string name = column[0];
-                    int seatNumber = rnd.Next(1, lines.Length);
-                    lstSeats.Items.Add($"{name}: Computer {seatNumber}");
+                    do
+                    {
+                        
+                        number = random.Next(1, lines.Length+1);
+                        
 
+                    } while(randomNumbers.Contains(number));
+
+                    if (number > 1 && number <= 12)
+                        row = 1;
+                    else if (number > 12 && number <= 25)
+                        row = 2;
+                    else if (number > 25 && number <= 38)
+                        row = 3;
+                    else
+                        row = 4;
+                    lstSeats.Items.Add($"{name:B}- Computer {number}, (Row {row})");
+
+                    randomNumbers.Add(number);
+                   
                 }
+
+                
             }
+
+           
+        }
         }
     }
-}
